@@ -1,0 +1,3 @@
+# Engineering rules
+
+Only original project code is MIT. Preserve dependency licenses. This is experimental independent infrastructure, never an audited or production-ready protocol. No real transactions, deployments, key handling or funds movement. Never invent production addresses; unknown values remain null and fail validation. Use integer accounting, include in-flight bridge liabilities, separate fee balances from collateral. No unrestricted mint or backing withdrawal. No credential-bearing URLs, private state or logs in commits. Run documented checks. Only the designated maintainer publishes; coding assistants must not commit or push.
