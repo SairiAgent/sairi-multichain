@@ -6,7 +6,7 @@ Date: 2026-10-05. Status: **PROPOSED; production BLOCKED**.
 
 Evaluate LayerZero V2 OFTAdapter locking existing Base SAIRI and a single destination OFT representation. Do not deploy another adapter until canonical token identity, existing adapter and mint-domain searches, token compatibility, beneficiary, and actual verifier deployments are independently established. The local prototype is an original accounting/authentication harness, NOT an implementation of LayerZero's verifier network.
 
-Official metadata documents Base EID 30184 and Robinhood EID 30416 with EndpointV2 candidates. Documentation is not bytecode verification. RPC access in this research environment was blocked (HTTP 403); network block heights, implementation identity and actual configured DVNs remain UNVERIFIED. See SOURCES.md.
+Official metadata documents Base EID 30184 and Robinhood EID 30416 with EndpointV2 candidates. Documentation is not bytecode verification. Initial RPC calls returned HTTP403. Subsequent pinned unfinalized code/getter observations succeeded (see SOURCES.md); finalized historical state, full endpoint implementation identity and actual configured DVNs remain UNVERIFIED. See SOURCES.md.
 
 ## Options and tradeoffs
 

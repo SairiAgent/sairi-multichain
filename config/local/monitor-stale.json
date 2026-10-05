@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "sharedDecimals": 6,
+  "maxAgeSeconds": 300,
+  "observations": {
+    "L": {"value": 505000000000, "units": "shared-decimal", "decimals": 6, "epoch": 41, "ledgerCheckpoint": "local-ledger-41", "finalized": true, "observedAt": 1700000000, "evidence": {"source": "synthetic:canonical.balanceOf(lockbox)/conversionRate", "chainId": 31337, "blockNumber": 1150}},
+    "R": {"value": 500000000000, "units": "shared-decimal", "decimals": 6, "epoch": 41, "ledgerCheckpoint": "local-ledger-41", "finalized": true, "observedAt": 1700000000, "evidence": {"source": "synthetic:representation.totalSupply", "chainId": 31338, "blockNumber": 3300}},
+    "P": {"value": 5000000000, "units": "shared-decimal", "decimals": 6, "epoch": 41, "ledgerCheckpoint": "local-ledger-41", "finalized": true, "observedAt": 1700000000, "evidence": {"source": "synthetic:ledger.pendingLocks", "chainId": 31337, "blockNumber": 1150}},
+    "Q": {"value": 0, "units": "shared-decimal", "decimals": 6, "epoch": 41, "ledgerCheckpoint": "local-ledger-41", "finalized": true, "observedAt": 1700000000, "evidence": {"source": "synthetic:ledger.pendingBurns", "chainId": 31338, "blockNumber": 3300}}
+  }
+}
