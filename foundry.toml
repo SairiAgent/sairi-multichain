@@ -1,0 +1,23 @@
+# EXPERIMENTAL local harness configuration. No RPC endpoints, forks or deployments are configured.
+[profile.default]
+src = "src"
+test = "test"
+out = "out"
+cache_path = "cache"
+libs = []
+solc_version = "0.8.30"
+auto_detect_solc = false
+evm_version = "prague"
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+ffi = false
+fs_permissions = []
+
+[fuzz]
+runs = 128
+
+[invariant]
+runs = 128
+depth = 32
+fail_on_revert = false
