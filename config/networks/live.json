@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "environment": "live",
+  "mock": false,
+  "documentaryReferences": [
+    {
+      "id": "lz-metadata-base-eid",
+      "network": "base",
+      "field": "eid",
+      "value": 30184,
+      "source": "config/research/documentary-candidates.json",
+      "status": "UNVERIFIED"
+    },
+    {
+      "id": "lz-metadata-robinhood-eid",
+      "network": "robinhood-mainnet",
+      "field": "eid",
+      "value": 30416,
+      "source": "config/research/documentary-candidates.json",
+      "status": "UNVERIFIED"
+    },
+    {
+      "id": "lz-metadata-base-endpoint-candidate",
+      "network": "base",
+      "field": "endpoint",
+      "value": "0x1a44076050125825900e736c501f859c50fe728c",
+      "source": "config/research/documentary-candidates.json",
+      "status": "UNVERIFIED"
+    },
+    {
+      "id": "lz-metadata-robinhood-endpoint-candidate",
+      "network": "robinhood-mainnet",
+      "field": "endpoint",
+      "value": "0x6f475642a6e85809b1c36fa62763669b1b48dd5b",
+      "source": "config/research/documentary-candidates.json",
+      "status": "UNVERIFIED"
+    },
+    {
+      "id": "robinhood-docs-weth-candidate",
+      "network": "robinhood-mainnet",
+      "field": "weth",
+      "value": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+      "source": "config/research/documentary-candidates.json",
+      "status": "UNVERIFIED"
+    }
+  ],
+  "sharedDecimals": null,
+  "creatorBeneficiary": null,
+  "owner": null,
+  "fees": {
+    "creatorFeeBps": null,
+    "lpFeeBps": null,
+    "feeDenominator": null
+  },
+  "limits": {
+    "exposureCap": null,
+    "rateWindowSeconds": null,
+    "rateLimitPerWindow": null
+  },
+  "networks": {
+    "canonical": {
+      "name": "base",
+      "chainId": 8453,
+      "eid": null,
+      "endpoint": null,
+      "bridgeApp": null,
+      "peer": null,
+      "token": null,
+      "tokenDecimals": null,
+      "weth": null,
+      "dex": null
+    },
+    "representation": {
+      "name": "robinhood-mainnet",
+      "chainId": 4663,
+      "eid": null,
+      "endpoint": null,
+      "bridgeApp": null,
+      "peer": null,
+      "token": null,
+      "tokenDecimals": null,
+      "weth": null,
+      "dex": null
+    }
+  },
+  "evidence": {}
+}

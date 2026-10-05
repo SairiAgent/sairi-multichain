@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "synthetic": false,
+  "sharedDecimals": 6,
+  "maxAgeSeconds": 300,
+  "observations": {
+    "L": {"value": 505000000000, "units": "shared-decimal", "decimals": 6, "epoch": 42, "ledgerCheckpoint": "placeholder-checkpoint", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "placeholder: unverified non-synthetic claim", "chainId": 8453, "blockNumber": 1}},
+    "R": {"value": 500000000000, "units": "shared-decimal", "decimals": 6, "epoch": 42, "ledgerCheckpoint": "placeholder-checkpoint", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "placeholder: unverified non-synthetic claim", "chainId": 4663, "blockNumber": 1}},
+    "P": {"value": 5000000000, "units": "shared-decimal", "decimals": 6, "epoch": 42, "ledgerCheckpoint": "placeholder-checkpoint", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "placeholder: unverified non-synthetic claim", "chainId": 8453, "blockNumber": 1}},
+    "Q": {"value": 0, "units": "shared-decimal", "decimals": 6, "epoch": 42, "ledgerCheckpoint": "placeholder-checkpoint", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "placeholder: unverified non-synthetic claim", "chainId": 4663, "blockNumber": 1}}
+  }
+}

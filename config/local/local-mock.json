@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "environment": "local-mock",
+  "mock": true,
+  "documentaryReferences": [],
+  "sharedDecimals": 6,
+  "creatorBeneficiary": "0xc0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0",
+  "owner": "0xd0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0d0",
+  "fees": {
+    "creatorFeeBps": 100,
+    "lpFeeBps": 30,
+    "feeDenominator": 10000
+  },
+  "limits": {
+    "exposureCap": 340282366920938463463374607431768211455,
+    "rateWindowSeconds": 86400,
+    "rateLimitPerWindow": 340282366920938463463374607431768211455
+  },
+  "networks": {
+    "canonical": {
+      "name": "local-chain-a (MOCK)",
+      "chainId": 31337,
+      "eid": 101,
+      "endpoint": "0xa1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+      "bridgeApp": "0xa2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2",
+      "peer": "0xb2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2",
+      "token": "0xa3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3",
+      "tokenDecimals": 18,
+      "weth": "0xa4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4",
+      "dex": "0xa5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5"
+    },
+    "representation": {
+      "name": "local-chain-b (MOCK)",
+      "chainId": 31338,
+      "eid": 202,
+      "endpoint": "0xb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1",
+      "bridgeApp": "0xb2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2",
+      "peer": "0xa2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2",
+      "token": "0xb2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2",
+      "tokenDecimals": 12,
+      "weth": "0xb4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4",
+      "dex": "0xb5b5b5b5b5b5b5b5b5b5b5b5b5b5b5b5b5b5b5b5"
+    }
+  },
+  "evidence": {}
+}

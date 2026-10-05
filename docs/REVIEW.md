@@ -18,4 +18,8 @@
 
 ## Evidence
 
-70 Solidity tests pass, none fail/skip; three fuzz tests run 128 cases each. make setup/check/demo completed locally. Hosted CI must be checked against the actual pushed commit separately. See STATUS.md and issue backlog for the remaining non-contract tooling and live integration gates.
+70 Solidity tests pass, none fail/skip; three fuzz tests run 128 cases each. make setup/check/demo completed locally. Hosted CI must be checked against the actual pushed commit separately. See STATUS.md and issue backlog for the remaining live integration gates.
+
+## Tooling review and regression fixes
+
+Orchestrator separately reviewed the Claude implementation and required: observed-balance L instead of totalLocked bookkeeping; all non-synthetic monitoring UNKNOWN without a verified evidence collector; exact value-bound evidence, known EIDs and credential-free URLs; atomic arithmetic-model updates on overflow/revert; strict bool/uint/direction boundaries; actual reserve valuation and sequential total-cost math. Claude implemented these corrections and negative regressions. 117 Python tests now pass independently, alongside the unchanged 70 Solidity tests. make setup/check/demo/simulate all completed successfully on 2026-10-05. No live integration/fork test is claimed.

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "sharedDecimals": 6,
+  "maxAgeSeconds": 300,
+  "observations": {
+    "L": {"value": 500000000000, "units": "shared-decimal", "decimals": 6, "epoch": 43, "ledgerCheckpoint": "local-ledger-43", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "synthetic:canonical.balanceOf(lockbox)/conversionRate after balance loss", "chainId": 31337, "blockNumber": 1210}},
+    "R": {"value": 500000000000, "units": "shared-decimal", "decimals": 6, "epoch": 43, "ledgerCheckpoint": "local-ledger-43", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "synthetic:representation.totalSupply", "chainId": 31338, "blockNumber": 3410}},
+    "P": {"value": 5000000000, "units": "shared-decimal", "decimals": 6, "epoch": 43, "ledgerCheckpoint": "local-ledger-43", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "synthetic:ledger.pendingLocks", "chainId": 31337, "blockNumber": 1210}},
+    "Q": {"value": 0, "units": "shared-decimal", "decimals": 6, "epoch": 43, "ledgerCheckpoint": "local-ledger-43", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "synthetic:ledger.pendingBurns", "chainId": 31338, "blockNumber": 3410}},
+    "trackedLocked": {"value": 505000000000, "units": "shared-decimal", "decimals": 6, "epoch": 43, "ledgerCheckpoint": "local-ledger-43", "finalized": true, "observedAt": 1700000500, "evidence": {"source": "synthetic:lockbox.totalLocked/conversionRate unchanged (reconciliation record only)", "chainId": 31337, "blockNumber": 1210}}
+  }
+}
