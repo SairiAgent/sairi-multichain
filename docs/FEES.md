@@ -1,5 +1,7 @@
 # Fees (LOCAL HARNESS)
 
+**Accepted direction:** [V4_LP_REWARDS.md](V4_LP_REWARDS.md) describes a 1% LP fee plus a separate 0.2% paired-asset fee to the habitual wallet. The older local harness below and creator hook are retained alternatives, not the launch default.
+
 **EXPERIMENTAL — UNAUDITED — NO MAINNET DEPLOYMENT.** This describes `src/pool/LocalConstantProductPool.sol` and `src/fees/CreatorFeeCollector.sol` as implemented today. It is not an approved production fee schedule, a Uniswap v4 hook, or a statement about any live pool.
 
 ## Formula (exact-input swaps only)
@@ -59,7 +61,7 @@ This is an ERC-20-only harness. There is **no native ETH support and no wrapping
 ## Creator fee custody and claims
 
 - The collector is deployed by the pool constructor; `pool` and `beneficiary` are **immutable**. There is no setter, no owner and no rebinding.
-- The beneficiary exists only as a local mock (`config/local/local-mock.json`, test constants). The live beneficiary/treasury is **unknown and `null`**; the validator rejects the live configuration until a value with bound, verified provenance exists.
+- The beneficiary exists only as a local mock (`config/local/local-mock.json`, test constants). The old live configuration remains fail-closed/null for unverified production deployment fields. The new v4 creator hook separately pins the user-authorized habitual-wallet beneficiary; see V4_CREATOR_FEES.md.
 - `claim(token)` is permissionless, but always pays the fixed beneficiary exactly `accrued − delivered`; the caller receives nothing. Exact-transfer checks revert the whole claim on any token tax.
 - The collector holds no LP shares and has no call path into the pool, lockbox or representation: it has **no bridge-collateral authority**. Creator fees in backed SAIRI are ordinary backed tokens already counted in `R`; they do not change observed backing `L`.
 
@@ -67,4 +69,4 @@ This is an ERC-20-only harness. There is **no native ETH support and no wrapping
 
 `make simulate` (or `python3.12 tools/sairi.py simulate --help`) runs independent buy and sell cases of $500 / $1,000 / $5,000 / $10,000 against a fresh synthetic pool (default $120,000 total liquidity, split half per side at configurable SAIRI/USD and WETH/USD fixed-point prices). With `--reserve-sairi/--reserve-weth` the configured total is reported as unused input, and `initialValuationUsd` gives the actual starting valuation of the supplied reserves at the reference prices. Directions other than buy/sell and non-positive reserves are rejected. The pool code underneath is an arithmetic mirror only (no token, EVM or authorization emulation). It reports the creator fee in the input asset, LP fee, protocol/router fee (0), gas (excluded), output, price impact and total cost as decimal strings computed with integers and exact fractions. The default prices are placeholders, **not market data**, and the model is constant-product, **not concentrated liquidity**. `python3.12 tools/sairi.py quote --reserve-in R --reserve-out R --gross G [--max-input M]` gives the exact integer quote.
 
-Production fees require a separate approval; nothing here implies one.
+The additive creator-fee direction is superseded by V4_LP_REWARDS.md. No mainnet deployment or all-DEX fee coverage is authorized.

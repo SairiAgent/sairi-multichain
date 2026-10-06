@@ -23,7 +23,7 @@ class RepositoryLockTest(unittest.TestCase):
         self.assertEqual(names["@layerzerolabs/lz-evm-protocol-v2"]["license"], "LZBL-1.2")
         self.assertEqual(names["@openzeppelin/contracts"]["version"], "4.9.6")
         summary = vendor_deps.license_summary()
-        self.assertEqual(set(summary), {"MIT", "LZBL-1.2", "Unlicense"})
+        self.assertEqual(set(summary), {"MIT", "LZBL-1.2", "Unlicense", "BUSL-1.1", "AGPL-3.0-only"})
         # Deployable OFT code paths are MIT except the LZBL-1.2 PacketV1Codec pulled in upstream by OFTCore.
         lzbl = set(summary["LZBL-1.2"])
         self.assertIn("@layerzerolabs/lz-evm-protocol-v2/contracts/messagelib/libs/PacketV1Codec.sol", lzbl)

@@ -32,6 +32,36 @@
       "url": "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/dc44c9f1a4c3b10af99492eed84f83ed244203f6/LICENSE",
       "gitBlobSha": "817249a0cd2ec1bb1c3d15ed0166f97903e94557",
       "sha256": "0e05b4f45c8769ece14ba2d202bf6f5ed7132600b642c981266f7255e0187ea3"
+    },
+    {
+      "file": "Uniswap-v4-BUSL_LICENSE",
+      "license": "BUSL-1.1",
+      "repository": "https://github.com/Uniswap/v4-core",
+      "commit": "59d3ecf53afa9264a16bba0e38f4c5d2231f80bc",
+      "path": "licenses/BUSL_LICENSE",
+      "url": "https://raw.githubusercontent.com/Uniswap/v4-core/59d3ecf53afa9264a16bba0e38f4c5d2231f80bc/licenses/BUSL_LICENSE",
+      "gitBlobSha": "8cbb6192626642e1a1567d72ae4f14ef8f66539d",
+      "sha256": "cd5241d8e1afe7098fa0f21059f7153348fdd25dbae5a8383a5f1dd2eb590321"
+    },
+    {
+      "file": "Uniswap-v4-MIT_LICENSE",
+      "license": "MIT",
+      "repository": "https://github.com/Uniswap/v4-core",
+      "commit": "59d3ecf53afa9264a16bba0e38f4c5d2231f80bc",
+      "path": "licenses/MIT_LICENSE",
+      "url": "https://raw.githubusercontent.com/Uniswap/v4-core/59d3ecf53afa9264a16bba0e38f4c5d2231f80bc/licenses/MIT_LICENSE",
+      "gitBlobSha": "e1ac41ac30d767545b24f6aae18d2ad2e40a907a",
+      "sha256": "b7b0c4379346af0701f5e4df9c861295d4a3af91dc3b15eb4356ebc571303df9"
+    },
+    {
+      "file": "Solmate-LICENSE",
+      "license": "AGPL-3.0-only",
+      "repository": "https://github.com/transmissions11/solmate",
+      "commit": "4b47a19038b798b4a33d9749d25e570443520647",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/transmissions11/solmate/4b47a19038b798b4a33d9749d25e570443520647/LICENSE",
+      "gitBlobSha": "29ebfa545f5580919a4e884d7014d7a3eb2df762",
+      "sha256": "20b067f86de375aae6db0f283ab2e65de24d537733b89bd58432c101259d84cf"
     }
   ]
 }

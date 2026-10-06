@@ -66,3 +66,7 @@ Testnet scope: the LayerZero testnet route is verified only as **unfinalized rea
 - Live roundtrip evidence is recorded in [TESTNET_RESULT](TESTNET_RESULT.md). Next: independently review the deployed configuration and close the remaining DEX/production gates.
 - Verify hosted CI for each subsequent change and complete the live integration gates.
 - Integration gates: issues [1](https://github.com/SairiAgent/sairi-multichain/issues/1), [2](https://github.com/SairiAgent/sairi-multichain/issues/2), [3](https://github.com/SairiAgent/sairi-multichain/issues/3), [4](https://github.com/SairiAgent/sairi-multichain/issues/4).
+
+## V4 fee milestone — 2026-10-06
+
+Implemented and locally tested: 1% LP pool plus 0.2% paired-asset hook to the habitual wallet, clean ERC20, fee/principal separation, 60/40 candidate LP split. Public faucet-only self-deployed v4 lab proof succeeded with four swap modes, hook/LP claims and complete liquidity removal; see [result](V4_TESTNET_RESULT.md). This supersedes older no-v4-integration statements for this laboratory only. Canonical DEX integration, production 40% recipient, liquidity custody/lock policy and mainnet deployment remain unestablished. No mainnet transactions.

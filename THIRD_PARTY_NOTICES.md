@@ -40,6 +40,16 @@ The npm tarballs for the LayerZero and OpenZeppelin packages contain no license 
 
 ## Research references, not imported
 
-- Uniswap v4 PoolManager source declares BUSL-1.1 (change date per upstream license). Not imported; no pool integration exists.
+- Uniswap v4 PoolManager source declares BUSL-1.1 (change date per upstream license). Now imported for non-production local/testnet integration; see the updated notice below.
 
 See [docs/SOURCES.md](docs/SOURCES.md) and [ADR 0001](docs/adr/0001-interoperability.md).
+
+## Uniswap v4 local integration (added 2026-10-06)
+
+`@uniswap/v4-core@1.0.2` is vendored verbatim, npm integrity and per-file hashes pinned in
+`dependencies/lock.json`. Core PoolManager is **BUSL-1.1**, interfaces/libraries include MIT;
+vendored Solmate `Owned.sol` is **AGPL-3.0-only**. Full pinned texts/provenance are in `licenses/`
+and copied into the package directory. The current BUSL text specifies a 2027-06-15 change date
+(or earlier specified date); no production-fork license is assumed. Self-deployed managers here
+are non-production testing only. Canonical manager integration does not imply cloning production
+core under the project's MIT license. Original project source alone is MIT.
