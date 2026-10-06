@@ -1,6 +1,6 @@
 # Sources and evidence ledger
 
-Retrieved **2026-10-05 UTC** (mainnet research) and **2026-10-06 UTC** (testnet route, dependencies; see the last section). Status vocabulary: VERIFIED (specify scope), UNVERIFIED, UNSUPPORTED, BLOCKED. Documentary facts do not equal verified code or working integrations. **No live integration test or testnet transaction has run. Initial documentary records have no pinned blocks; later read-only RPC observations are recorded separately below.**
+Retrieved **2026-10-05 UTC** (mainnet research) and **2026-10-06 UTC** (testnet route, dependencies; see the last section). Status vocabulary: VERIFIED (specify scope), UNVERIFIED, UNSUPPORTED, BLOCKED. Documentary facts do not equal verified code or working integrations. **Earlier sections are historical research snapshots. A live testnet roundtrip was subsequently completed on 2026-10-06; see TESTNET_RESULT and the evidence section below. Initial documentary records have no pinned blocks.**
 
 ## Robinhood Chain
 
@@ -73,7 +73,7 @@ Send/receive confirmations mirror across the route and neither direction uses th
 
 **Fork simulation:** `make testnet-fork-check` deployed, wired and ran both legs on forks of both chains through the live LayerZero contracts, impersonating the configured DVN for attestation. Earlier attempts hit transient Robinhood RPC `unsupported block number` errors at the newest block. The test now forks 32 blocks behind head and passes. It finishes by overriding the adapter's per-app send DVN on the fork (defaults untouched) and asserting that the script's `send()` refuses before broadcasting. Simulation only; not live proof.
 
-**Orchestrator's independent read-only checks (2026-10-06, as reported):** 10 runtime code hashes from the preflight record matched `cast keccak`; read-only creation-gas estimation for the test token and the backed OFT against the real Robinhood testnet endpoint succeeded (not deployment proof). The orchestrator's isolated testnet-only signer had zero balance on both chains, and the Robinhood faucet returned a Vercel Security Checkpoint, so no transaction has been sent.
+**Orchestrator's independent read-only checks (2026-10-06, as reported):** 10 runtime code hashes from the preflight record matched `cast keccak`; read-only creation-gas estimation for the test token and the backed OFT against the real Robinhood testnet endpoint succeeded (not deployment proof). The orchestrator's isolated testnet-only signer had zero balance on both chains, and the Robinhood faucet returned a Vercel Security Checkpoint, so at that earlier checkpoint no transaction had been sent. This funding blocker was subsequently resolved; see the live result below.
 
 **License texts:** LayerZero-Labs/LayerZero-v2 at commit `9c741e7f9790639537b1710a203bcdfd73b0b9ac` (`LICENSE-LZBL-1.2`, `LICENSE-MIT`) and OpenZeppelin/openzeppelin-contracts tag `v4.9.6` (`dc44c9f1a4c3b10af99492eed84f83ed244203f6`, `LICENSE`), fetched from raw.githubusercontent.com at those commits. Git blob ids match the GitHub contents API. The LayerZero-Labs/devtools repository returned no license file from the GitHub license API. Pins are in `licenses/lock.json`.
 
@@ -82,3 +82,7 @@ Send/receive confirmations mirror across the route and neither direction uses th
 **LayerZero Scan testnet API:** `https://scan-testnet.layerzero-api.com/v1/messages/latest?limit=1` returned HTTP 200 with `status.name`, `pathway.{srcEid,dstEid,nonce}`, `source.tx.txHash` and `destination.tx.txHash`; `testnet-message` uses `/v1/messages/tx/<hash>`.
 
 **Dependencies:** npm registry tarballs pinned by version and sha512 integrity in `dependencies/lock.json` (registry metadata retrieved 2026-10-06). See [THIRD_PARTY_NOTICES](../THIRD_PARTY_NOTICES.md).
+
+## Live testnet transaction evidence — 2026-10-06
+
+The historical isolated-signer funding observation is superseded by the owner-authorized, faucet-funded live testnet run. See [TESTNET_RESULT](TESTNET_RESULT.md) and [receipts](evidence/testnet-roundtrip-2026-10-06.json). Public RPCs: https://sepolia.base.org and https://rpc.testnet.chain.robinhood.com . Scope: successful mined deployment/wiring/source/destination receipts and matching event identities, not economic finality or synchronized backing proof. No mainnet, real SAIRI or DEX integration.

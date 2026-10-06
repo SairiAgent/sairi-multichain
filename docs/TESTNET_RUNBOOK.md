@@ -80,9 +80,9 @@ Equal balances and an indexer `DELIVERED` status are each insufficient on their 
 - **Status UNKNOWN with `TRACKED_L_LESS_THAN_OBSERVED_R`**: not a proof of insolvency (the reads are unsynchronized), but treat it as a reason to pause both apps and investigate the transaction history before continuing.
 - **Release reverts after a token change** (for example a tax enabled after deposit): backing is untouched and the verified message stays retryable; retry once the token behaves exactly again (`test/layerzero/OFTAdapterTokenRisks.t.sol`).
 
-## Current blocker (2026-10-06)
+## Live result (2026-10-06)
 
-The live run is **blocked on faucet funding**, not on tooling or a signer. The orchestrator generated an isolated, testnet-only signer outside this repository and confirmed a **zero balance on both Base Sepolia and Robinhood Chain testnet**. In the orchestrator's environment the Robinhood testnet faucet returned a Vercel Security Checkpoint page instead of funds. Nothing has been signed or broadcast. No key material or local paths are recorded here.
+The earlier isolated-signer funding blocker is superseded. The owner authorized the habitual operator, funded Robinhood testnet, and the maintainer completed the live roundtrip with valueless stand-in tokens. See [TESTNET_RESULT](TESTNET_RESULT.md) for both source/destination execution hashes and evidence. Do not redeploy or replay the completed sends. A new experiment must reconcile existing state first.
 
 ## Uniswap
 

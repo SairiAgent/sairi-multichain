@@ -2,6 +2,10 @@
 
 **EXPERIMENTAL — UNAUDITED — NO MAINNET DEPLOYMENT**
 
+## LIVE TESTNET RESULT — 2026-10-06
+
+Completed the 10-token Base Sepolia → Robinhood testnet → Base Sepolia roundtrip with successful on-chain receipts and matching delivery events. See [result](TESTNET_RESULT.md) and [machine-readable evidence](evidence/testnet-roundtrip-2026-10-06.json). Historical funding blocker below is superseded; no mainnet or real SAIRI was used.
+
 ## IMPLEMENTED
 
 - Authenticated local lockbox / backed representation with replay protection, pauses, rate limits, exposure caps, shared-decimal dust rejection and no administrative collateral withdrawal.
@@ -45,9 +49,8 @@ Testnet scope: the LayerZero testnet route is verified only as **unfinalized rea
 
 ## BLOCKED
 
-- **Live testnet roundtrip: not executed, blocked on faucet funding.** The orchestrator generated an isolated, testnet-only signer (kept outside this repository) and verified a **zero balance on both Base Sepolia and Robinhood Chain testnet**. In that environment the Robinhood testnet faucet returned a Vercel Security Checkpoint instead of funds. No signing or broadcast has happened, and no live deployment or roundtrip evidence exists. Do not describe the fork simulation or local tests as a live roundtrip ([runbook](TESTNET_RUNBOOK.md)).
 - **Uniswap on Robinhood testnet:** a canonical deployment is UNVERIFIED, so no testnet pool integration is attempted.
-- Production LayerZero use (mainnet adapter/OFT, DVN selection beyond a 1-of-1 testnet DVN, LZBL-1.2 license review, audit) and Uniswap v4 integration; a verified live evidence collector for the monitor (until it exists, real snapshots are UNKNOWN by design); any production use pending provenance, pinned-block code verification, mature-library/DEX integration tests, fee-schedule approval and independent audit. Initial RPC attempts returned HTTP 403; later pinned, unfinalized read-only calls verified chain IDs, endpoint EIDs/code hashes and Robinhood WETH proxy/implementation observations. Sourcify proxy exact-match and implementation metadata-excluded match are recorded in SOURCES. Finalized historical state remains unavailable; these observations do not verify a production integration. No public-chain deployment or financial operation has occurred.
+- Production LayerZero use (mainnet adapter/OFT, DVN selection beyond a 1-of-1 testnet DVN, LZBL-1.2 license review, audit) and Uniswap v4 integration; a verified live evidence collector for the monitor (until it exists, real snapshots are UNKNOWN by design); any production use pending provenance, pinned-block code verification, mature-library/DEX integration tests, fee-schedule approval and independent audit. Initial RPC attempts returned HTTP 403; later pinned, unfinalized read-only calls verified chain IDs, endpoint EIDs/code hashes and Robinhood WETH proxy/implementation observations. Sourcify proxy exact-match and implementation metadata-excluded match are recorded in SOURCES. Finalized historical state remains unavailable; these observations do not verify a production integration. Only the explicitly documented testnet deployments and stand-in-token roundtrip have occurred; no mainnet or real-asset operation has occurred.
 
 ## Known tooling limits
 
@@ -60,6 +63,6 @@ Testnet scope: the LayerZero testnet route is verified only as **unfinalized rea
 
 ## NEXT
 
-- Maintainer: obtain testnet faucet funds on both chains, run the [testnet runbook](TESTNET_RUNBOOK.md), and record on-chain transaction evidence (deployment, wiring, both source transactions and both destination executions with `PacketDelivered`/`OFTReceived`) here and in SOURCES.
+- Live roundtrip evidence is recorded in [TESTNET_RESULT](TESTNET_RESULT.md). Next: independently review the deployed configuration and close the remaining DEX/production gates.
 - Verify hosted CI for each subsequent change and complete the live integration gates.
 - Integration gates: issues [1](https://github.com/SairiAgent/sairi-multichain/issues/1), [2](https://github.com/SairiAgent/sairi-multichain/issues/2), [3](https://github.com/SairiAgent/sairi-multichain/issues/3), [4](https://github.com/SairiAgent/sairi-multichain/issues/4).
