@@ -40,7 +40,22 @@ Replay (per-nonce consumption), unauthorized endpoint/peer, recipient self-alias
 
 ## Mock vs mature-library gap
 
-`LocalEndpointMock` and `LocalConstantProductPool` are original minimal code. They do not reproduce LayerZero OApp/OFT semantics (DVN/executor configuration, options, compose, fee quoting, ordered/unordered delivery, `lzReceive` guard rails) or Uniswap v4 PoolManager/hook semantics (unlock callbacks, deltas, flash accounting, concentrated liquidity, hook permissions). Passing local tests says nothing about those integrations, which remain **blocked** (see [STATUS](STATUS.md) and the integration issues).
+`LocalEndpointMock` and `LocalConstantProductPool` are original minimal code. They do not reproduce LayerZero OApp/OFT semantics or Uniswap v4 PoolManager/hook semantics. The testnet-only `src/layerzero/` contracts close part of the LayerZero gap: they are built on pinned official OFT/OApp code and tested against genuine EndpointV2 + ULN302 code (DVN quoting/attestation thresholds, confirmations, options, fee payment, nonce ordering, payload-hash checks, `lzReceive` origin checks). Still not covered locally: real DVN/executor off-chain behaviour, chain finality, and the deployed testnet bytecode's source identity. Uniswap v4 remains **blocked**.
+
+## LayerZero OFT (testnet) threats
+
+| Threat | Handling | Evidence |
+|---|---|---|
+| Non-peer OApp sends to the representation | Endpoint refuses commit (`LZ_PathNotInitializable`) | `test_nonPeerSender_rejectedAtDelivery` |
+| Unverified, under-confirmed, tampered or replayed packet | ULN302/EndpointV2 reject | `test_unverifiedPacket_cannotExecute`, `test_insufficientConfirmations_reverts`, `test_tamperedMessage_cannotExecute`, `test_replay_rejectedByEndpoint` |
+| Owner re-points the route to an unbacked contract | Peer settable once, only for the configured EID | `test_setPeer_onceOnly_singleEid_nonZero` |
+| Fee-on-transfer canonical token under-backs | Exact transfer checks revert | `test_feeOnTransferToken_rejected` |
+| **Residual:** compromised/weak verifier forges a release | Bounded by `totalLocked`; within it, backing is drained and the representation becomes unbacked | `test_compromisedVerifier_forgedRelease_boundedByTotalLocked` |
+| Token callback re-enters the adapter (relock, or executing another release) during lock/release | Outer exact-transfer check fails; the whole transaction reverts and the message stays retryable | `OFTAdapterTokenRisks.t.sol` reentrancy tests |
+| Token tax/fee switched on **after** collateral deposit | Release reverts (transfer failure or `NonExactTransfer`), backing untouched; the same message succeeds once the tax is removed. Liveness depends on the token. | `test_senderTaxEnabledAfterDeposit_*`, `test_recipientFeeEnabledAfterDeposit_*` |
+| **Residual:** owner/delegate changes libraries, DVNs, executor or options for the app at the endpoint, or pauses forever | Not prevented by these contracts. Wiring pins the config, and the script's `send()` refuses to broadcast unless the effective per-app route and exact options still match (`TestnetWiringTamper.t.sol`). Other users' transactions are not protected by the script. `testnet-status` cannot prove solvency (always `UNKNOWN`). | governance risk, documented |
+| **Residual:** 1-of-1 LayerZero Labs DVN on testnet | Accepted for testnet only; production needs multiple independent DVNs | TESTNET_RUNBOOK |
+| Paused/capped destination | Delivery reverts; message stays verified and retryable | `test_pause_blocksSend_inboundStaysRetryable`, `test_exposureCap_outboundAndInbound` |
 
 ## Configuration threats
 

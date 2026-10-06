@@ -1,6 +1,6 @@
 # ADR 0001 — conditional OFTAdapter direction; local harness only
 
-Date: 2026-10-05. Status: **PROPOSED; production BLOCKED**.
+Date: 2026-10-05 (updated 2026-10-06). Status: **PROPOSED; testnet implementation exists; production BLOCKED**.
 
 ## Decision
 
@@ -20,4 +20,8 @@ Peer changes, verifier weakening, proxy upgrades, or administrator compromise ca
 
 ## Licensing evidence
 
-Read 2026-10-05: https://github.com/LayerZero-Labs/devtools/blob/main/packages/oft-evm/contracts/OFTAdapter.sol (Git blob 733e332113167f1b01ba591d5ec0fe2dd388f097, SPDX MIT), package metadata version 4.0.1. This is research evidence, not a pinned imported dependency. No LayerZero code is bundled in this prototype.
+Read 2026-10-05: https://github.com/LayerZero-Labs/devtools/blob/main/packages/oft-evm/contracts/OFTAdapter.sol (Git blob 733e332113167f1b01ba591d5ec0fe2dd388f097, SPDX MIT), package metadata version 4.0.1.
+
+## Update 2026-10-06 — testnet implementation
+
+The OFTAdapter direction is now implemented for **testnet only** (`src/layerzero/`), on vendored, pinned LayerZero packages (`oft-evm` 4.0.1, `oapp-evm` 0.4.1, protocol/messagelib 3.0.168) and OpenZeppelin 4.9.6. Protocol and messagelib packages are LZBL-1.2; `PacketV1Codec` (LZBL-1.2) is compiled into the OFT bytecode through upstream `OFTCore`, so production use needs a license review. The Base Sepolia ↔ Robinhood testnet route was verified read-only (EIDs 40245/40451, ULN302 libraries, LayerZero Labs DVN, executors, fee quotes). Production status is unchanged: **BLOCKED** on canonical SAIRI identity, existing adapters, DVN selection, licensing, audit and mainnet evidence. CCIP was not re-evaluated.

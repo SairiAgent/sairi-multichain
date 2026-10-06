@@ -1,10 +1,10 @@
 # Runbook (local only)
 
-**EXPERIMENTAL — UNAUDITED — NO MAINNET DEPLOYMENT.** Every command below is offline once the Solidity 0.8.30 compiler has been fetched by Foundry. None uses a wallet, private key, RPC endpoint or network service. There is no deployment or live-operation procedure.
+**EXPERIMENTAL — UNAUDITED — NO MAINNET DEPLOYMENT.** Every command in this file is offline once the Solidity 0.8.30 compiler has been fetched by Foundry. None uses a wallet, private key, RPC endpoint or network service. The separate, testnet-only network procedure (read-only checks plus maintainer-gated testnet broadcasts) is in [TESTNET_RUNBOOK](TESTNET_RUNBOOK.md); there is no mainnet procedure.
 
 ## Prerequisites
 
-Foundry v1.5.1 and Python 3.12.8 (`PYTHON ?= python3.12`; override with `make PYTHON=/path/to/python3.12 ...`). No third-party Python or Solidity packages. Nothing is installed globally; `PYTHONDONTWRITEBYTECODE=1` is exported so test runs leave no `__pycache__`.
+Foundry v1.5.1 and Python 3.12.8 (`PYTHON ?= python3.12`; override with `make PYTHON=/path/to/python3.12 ...`). No Python packages. Third-party Solidity sources are vendored in `dependencies/` and pinned by `dependencies/lock.json` (`make deps-verify`); `make deps-fetch` (network, maintainers only) re-creates them from the pinned npm tarballs. Nothing is installed globally; `PYTHONDONTWRITEBYTECODE=1` is exported so test runs leave no `__pycache__`.
 
 ## Make targets
 
@@ -12,14 +12,16 @@ Foundry v1.5.1 and Python 3.12.8 (`PYTHON ?= python3.12`; override with `make PY
 |---|---|
 | `make setup` | Asserts Python is exactly 3.12.8 and Forge reports 1.5.1. Installs nothing. |
 | `make build` | `forge build` |
-| `make test` | Full `forge test` suite, then `make test-python` |
+| `make test` | `forge test` excluding the opt-in `test/fork/*`, then `make test-python` |
 | `make test-python` | `python -m unittest discover -s tests -p 'test_*.py' -v` |
-| `make invariants` | `forge test --match-path 'test/invariant/*'` |
+| `make invariants` | `forge test --match-path 'test/invariant/*'` (local harness and LayerZero stack) |
+| `make deps-verify` | Vendored dependency tree equals `dependencies/lock.json` (hashes, pins, SPDX, imports, remappings); full upstream license texts in `licenses/` match `licenses/lock.json` (sha256 + git blob id) and are present in every package that needs them |
 | `make demo` | Solidity integration test (`test/integration/*`, `-vv`), then `tools/sairi.py demo` and `tools/sairi.py simulate` |
 | `make config-check` | Validates `config/local/local-mock.json`; runs the expected-reject gate on `config/networks/live.json` (passes only when the live file is rejected) |
 | `make monitor-check` | Evaluates the five monitor fixtures at fixed `--now 1700000600` and asserts SAFE / UNSAFE (observed-balance loss) / STALE / UNKNOWN (incoherent) / UNKNOWN (non-synthetic) |
 | `make simulate` | Default synthetic buy/sell cost table |
-| `make check` | `forge fmt --check`, build, test (Solidity + Python), invariants, config-check, monitor-check, `tools/check_repository.py` publication guard |
+| `make check` | `forge fmt --check`, deps-verify, build, test (Solidity + Python), invariants, config-check, monitor-check, `tools/check_repository.py` publication guard (which rejects any `runtime/`, `.claude/` or `.env*` path in the working tree) |
+| `make testnet-*` | Network; see [TESTNET_RUNBOOK](TESTNET_RUNBOOK.md). Never part of `check` |
 
 ## Tool commands
 
@@ -47,4 +49,4 @@ Exit codes: `validate-config` 0 = VALID (or REJECTED with `--expect-reject`), 1 
 
 ## Promotion to any live configuration
 
-Not authorized. It would require, at minimum: official-source provenance and pinned-block code verification for every value (see [SOURCES](SOURCES.md), [EXISTING_SAIRI](EXISTING_SAIRI.md)); integration against mature LayerZero and DEX libraries; fee-schedule approval; an independent audit; and the integration issues tracked in [STATUS](STATUS.md).
+Mainnet promotion is not authorized (testnet steps are in [TESTNET_RUNBOOK](TESTNET_RUNBOOK.md)). It would require, at minimum: official-source provenance and pinned-block code verification for every value (see [SOURCES](SOURCES.md), [EXISTING_SAIRI](EXISTING_SAIRI.md)); integration against mature LayerZero and DEX libraries; fee-schedule approval; an independent audit; and the integration issues tracked in [STATUS](STATUS.md).

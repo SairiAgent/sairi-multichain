@@ -1,0 +1,444 @@
+{
+  "kind": "TESTNET_READ_ONLY_PREFLIGHT",
+  "status": "READY",
+  "mainnetProhibited": true,
+  "retrievedAt": "2026-10-06T13:04:35+00:00",
+  "chains": {
+    "baseSepolia": {
+      "chainKey": "base-sepolia",
+      "rpc": "https://sepolia.base.org",
+      "chainId": 84532,
+      "blockNumber": 47761788,
+      "blockHash": "0xf80680b6f4b67daa21482ae7ff0cb1d7894b19e3a2f1b4ed17c21921b915fec0",
+      "finalityVerified": false,
+      "contracts": {
+        "endpoint": {
+          "address": "0x6edce65403992e310a62460808c4b910d972f10f",
+          "runtimeBytes": 24005,
+          "runtimeCodeHash": "0x585ea94e46fea3a5117e671c4b8b5939ad350362bc4b3382cf3b0f99459dcd15"
+        },
+        "sendUln302": {
+          "address": "0xc1868e054425d378095a003ecba3823a5d0135c9",
+          "runtimeBytes": 22995,
+          "runtimeCodeHash": "0xc561c43a20e20f6618c205a0c4f0dbe333f4ede394c003069bb15ba01b32fded"
+        },
+        "receiveUln302": {
+          "address": "0x12523de19dc41c91f7d2093e0cfbb76b17012c8d",
+          "runtimeBytes": 11010,
+          "runtimeCodeHash": "0x5c2ef919f0b5ff48d8900a58b41206dbe18e1903eed68b565c1d98452e1e5e21"
+        },
+        "executor": {
+          "address": "0x8a3d588d9f6ac041476b094f97ff94ec30169d3d",
+          "runtimeBytes": 2304,
+          "runtimeCodeHash": "0x387c133848cea186b902c55799d6609a3f4f9c5183d5ef8de42e11fb3ee31ab4"
+        },
+        "dvnLayerZeroLabs": {
+          "address": "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6",
+          "runtimeBytes": 17973,
+          "runtimeCodeHash": "0x2facc419462b6e1da41779880bda4a8f8260c0676a089f0017ce51da8c6b9eee"
+        },
+        "deadDvn": {
+          "address": "0x78551adc2553ef1858a558f5300f7018aad2fa7e",
+          "runtimeBytes": 934,
+          "runtimeCodeHash": "0x026f188632f295f7c3b43535f30aeb67442ebf603ba66eb35a44bcc71907e08e"
+        }
+      },
+      "defaultSendUlnConfig": {
+        "confirmations": 2,
+        "requiredDVNCount": 1,
+        "optionalDVNCount": 0,
+        "optionalDVNThreshold": 0,
+        "requiredDVNs": [
+          "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+        ],
+        "optionalDVNs": []
+      },
+      "defaultReceiveUlnConfig": {
+        "confirmations": 1,
+        "requiredDVNCount": 1,
+        "optionalDVNCount": 0,
+        "optionalDVNThreshold": 0,
+        "requiredDVNs": [
+          "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+        ],
+        "optionalDVNs": []
+      },
+      "defaultExecutorConfig": {
+        "maxMessageSize": 10000,
+        "executor": "0x8a3d588d9f6ac041476b094f97ff94ec30169d3d"
+      },
+      "quoteNativeFeeWei": "102024407710967",
+      "uniswapV4": {
+        "documented": true,
+        "address": "0x05e73354cfdd6745c338b50bcfdfa3aa6fa03408",
+        "runtimeBytes": 24009,
+        "runtimeCodeHash": "0x03c45db6d09b14da7c1f7239a5a49697f976d395277e6d2acb6fbed3f9e0249f",
+        "requiredForBridge": false
+      }
+    },
+    "robinhoodTestnet": {
+      "chainKey": "robinhood-testnet",
+      "rpc": "https://rpc.testnet.chain.robinhood.com",
+      "chainId": 46630,
+      "blockNumber": 129884994,
+      "blockHash": "0xaf9aa1cbeec95c7ba407f041ac61c5a9864fe23106034f4fd2149043d46711e1",
+      "finalityVerified": false,
+      "contracts": {
+        "endpoint": {
+          "address": "0x3acaaf60502791d199a5a5f0b173d78229ebfe32",
+          "runtimeBytes": 24005,
+          "runtimeCodeHash": "0xd80c03fcc5b6614fcaf0d68c257214a14131c03a47432f86c02930c83777478c"
+        },
+        "sendUln302": {
+          "address": "0x45841dd1ca50265da7614fc43a361e526c0e6160",
+          "runtimeBytes": 22995,
+          "runtimeCodeHash": "0xf02898adb418971b0085d2a4a9ff532e71583581b77020005c8bc5eee19e5011"
+        },
+        "receiveUln302": {
+          "address": "0xd682ecf100f6f4284138aa925348633b0611ae21",
+          "runtimeBytes": 11010,
+          "runtimeCodeHash": "0xb5dedcb09700109f92660c6fc8a2cec7a6d09eecc74b66608c2ab89b53ffaedb"
+        },
+        "executor": {
+          "address": "0x701f3927871efcea1235db722f9e608ae120d243",
+          "runtimeBytes": 2304,
+          "runtimeCodeHash": "0x1b4468bdad20f4aa7b0274e54280a8b7880d79380814141838df0c89bd691478"
+        },
+        "dvnLayerZeroLabs": {
+          "address": "0xa78a78a13074ed93ad447a26ec57121f29e8fec2",
+          "runtimeBytes": 20004,
+          "runtimeCodeHash": "0xf7a724de222408a4556d641a57a2841816e0a57db372647d399a88022ddba029"
+        },
+        "deadDvn": {
+          "address": "0x88b27057a9e00c5f05dda29241027aff63f9e6e0",
+          "runtimeBytes": 934,
+          "runtimeCodeHash": "0x026f188632f295f7c3b43535f30aeb67442ebf603ba66eb35a44bcc71907e08e"
+        }
+      },
+      "defaultSendUlnConfig": {
+        "confirmations": 1,
+        "requiredDVNCount": 1,
+        "optionalDVNCount": 0,
+        "optionalDVNThreshold": 0,
+        "requiredDVNs": [
+          "0xa78a78a13074ed93ad447a26ec57121f29e8fec2"
+        ],
+        "optionalDVNs": []
+      },
+      "defaultReceiveUlnConfig": {
+        "confirmations": 2,
+        "requiredDVNCount": 1,
+        "optionalDVNCount": 0,
+        "optionalDVNThreshold": 0,
+        "requiredDVNs": [
+          "0xa78a78a13074ed93ad447a26ec57121f29e8fec2"
+        ],
+        "optionalDVNs": []
+      },
+      "defaultExecutorConfig": {
+        "maxMessageSize": 10000,
+        "executor": "0x701f3927871efcea1235db722f9e608ae120d243"
+      },
+      "quoteNativeFeeWei": "103306260146105",
+      "uniswapV4": {
+        "documented": false,
+        "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+        "runtimeBytes": 24009,
+        "runtimeCodeHash": "0xbd3881180b547f5fe817545743cfb4343e96b1bc6640dcd70c106b0066e95626",
+        "requiredForBridge": false
+      }
+    }
+  },
+  "checks": [
+    {
+      "chain": "baseSepolia",
+      "check": "chainId",
+      "ok": true,
+      "observed": 84532,
+      "expected": 84532
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "code:endpoint",
+      "ok": true,
+      "observed": 24005
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "code:sendUln302",
+      "ok": true,
+      "observed": 22995
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "code:receiveUln302",
+      "ok": true,
+      "observed": 11010
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "code:executor",
+      "ok": true,
+      "observed": 2304
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "code:dvnLayerZeroLabs",
+      "ok": true,
+      "observed": 17973
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "code:deadDvn",
+      "ok": true,
+      "observed": 934
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "endpoint.eid",
+      "ok": true,
+      "observed": 40245,
+      "expected": 40245
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "endpoint.isSupportedEid(remote)",
+      "ok": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "endpoint.defaultSendLibrary(remote)",
+      "ok": true,
+      "observed": "0xc1868e054425d378095a003ecba3823a5d0135c9",
+      "expected": "0xc1868e054425d378095a003ecba3823a5d0135c9"
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "endpoint.defaultReceiveLibrary(remote)",
+      "ok": true,
+      "observed": "0x12523de19dc41c91f7d2093e0cfbb76b17012c8d",
+      "expected": "0x12523de19dc41c91f7d2093e0cfbb76b17012c8d"
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "sendUln.defaultConfig",
+      "ok": true,
+      "observed": {
+        "confirmations": 2,
+        "requiredDVNs": [
+          "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+        ],
+        "optionalDVNs": []
+      },
+      "expected": {
+        "confirmations": 2,
+        "requiredDVNs": [
+          "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+        ],
+        "optionalDVNs": []
+      }
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "sendUln.noDeadDvn",
+      "ok": true,
+      "observed": [
+        "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+      ]
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "receiveUln.defaultConfig",
+      "ok": true,
+      "observed": {
+        "confirmations": 1,
+        "requiredDVNs": [
+          "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+        ],
+        "optionalDVNs": []
+      },
+      "expected": {
+        "confirmations": 1,
+        "requiredDVNs": [
+          "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+        ],
+        "optionalDVNs": []
+      }
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "receiveUln.noDeadDvn",
+      "ok": true,
+      "observed": [
+        "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+      ]
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "sendUln.defaultExecutor",
+      "ok": true,
+      "observed": {
+        "maxMessageSize": 10000,
+        "executor": "0x8a3d588d9f6ac041476b094f97ff94ec30169d3d"
+      },
+      "expected": {
+        "executor": "0x8a3d588d9f6ac041476b094f97ff94ec30169d3d",
+        "maxMessageSize": 10000
+      }
+    },
+    {
+      "chain": "baseSepolia",
+      "check": "endpoint.quote(oft-sized message)",
+      "ok": true,
+      "observed": "102024407710967"
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "chainId",
+      "ok": true,
+      "observed": 46630,
+      "expected": 46630
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "code:endpoint",
+      "ok": true,
+      "observed": 24005
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "code:sendUln302",
+      "ok": true,
+      "observed": 22995
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "code:receiveUln302",
+      "ok": true,
+      "observed": 11010
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "code:executor",
+      "ok": true,
+      "observed": 2304
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "code:dvnLayerZeroLabs",
+      "ok": true,
+      "observed": 20004
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "code:deadDvn",
+      "ok": true,
+      "observed": 934
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "endpoint.eid",
+      "ok": true,
+      "observed": 40451,
+      "expected": 40451
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "endpoint.isSupportedEid(remote)",
+      "ok": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "endpoint.defaultSendLibrary(remote)",
+      "ok": true,
+      "observed": "0x45841dd1ca50265da7614fc43a361e526c0e6160",
+      "expected": "0x45841dd1ca50265da7614fc43a361e526c0e6160"
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "endpoint.defaultReceiveLibrary(remote)",
+      "ok": true,
+      "observed": "0xd682ecf100f6f4284138aa925348633b0611ae21",
+      "expected": "0xd682ecf100f6f4284138aa925348633b0611ae21"
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "sendUln.defaultConfig",
+      "ok": true,
+      "observed": {
+        "confirmations": 1,
+        "requiredDVNs": [
+          "0xa78a78a13074ed93ad447a26ec57121f29e8fec2"
+        ],
+        "optionalDVNs": []
+      },
+      "expected": {
+        "confirmations": 1,
+        "requiredDVNs": [
+          "0xa78a78a13074ed93ad447a26ec57121f29e8fec2"
+        ],
+        "optionalDVNs": []
+      }
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "sendUln.noDeadDvn",
+      "ok": true,
+      "observed": [
+        "0xa78a78a13074ed93ad447a26ec57121f29e8fec2"
+      ]
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "receiveUln.defaultConfig",
+      "ok": true,
+      "observed": {
+        "confirmations": 2,
+        "requiredDVNs": [
+          "0xa78a78a13074ed93ad447a26ec57121f29e8fec2"
+        ],
+        "optionalDVNs": []
+      },
+      "expected": {
+        "confirmations": 2,
+        "requiredDVNs": [
+          "0xa78a78a13074ed93ad447a26ec57121f29e8fec2"
+        ],
+        "optionalDVNs": []
+      }
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "receiveUln.noDeadDvn",
+      "ok": true,
+      "observed": [
+        "0xa78a78a13074ed93ad447a26ec57121f29e8fec2"
+      ]
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "sendUln.defaultExecutor",
+      "ok": true,
+      "observed": {
+        "maxMessageSize": 10000,
+        "executor": "0x701f3927871efcea1235db722f9e608ae120d243"
+      },
+      "expected": {
+        "executor": "0x701f3927871efcea1235db722f9e608ae120d243",
+        "maxMessageSize": 10000
+      }
+    },
+    {
+      "chain": "robinhoodTestnet",
+      "check": "endpoint.quote(oft-sized message)",
+      "ok": true,
+      "observed": "103306260146105"
+    }
+  ],
+  "blockers": [],
+  "note": "Unfinalized, unsynchronized reads at a recent block per chain. READY means the pinned LayerZero route is present as expected; it is not a deployment or delivery proof."
+}

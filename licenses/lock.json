@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "note": "Full third-party license texts copied verbatim from official upstream repositories at pinned commits. gitBlobSha is the upstream git blob id reported by the GitHub contents API and is recomputed offline by tools/vendor_deps.py verify.",
+  "retrievedAt": "2026-10-06",
+  "files": [
+    {
+      "file": "LayerZero-v2-LICENSE-LZBL-1.2",
+      "license": "LZBL-1.2",
+      "repository": "https://github.com/LayerZero-Labs/LayerZero-v2",
+      "commit": "9c741e7f9790639537b1710a203bcdfd73b0b9ac",
+      "path": "LICENSE-LZBL-1.2",
+      "url": "https://raw.githubusercontent.com/LayerZero-Labs/LayerZero-v2/9c741e7f9790639537b1710a203bcdfd73b0b9ac/LICENSE-LZBL-1.2",
+      "gitBlobSha": "52be5c9fe938d115b30069a14b99d088b9928e19",
+      "sha256": "3d4db8501bee378a0da0b8ee497b1857677f267f0db45f2d9db63f2fcd7a78d9"
+    },
+    {
+      "file": "LayerZero-v2-LICENSE-MIT",
+      "license": "MIT",
+      "repository": "https://github.com/LayerZero-Labs/LayerZero-v2",
+      "commit": "9c741e7f9790639537b1710a203bcdfd73b0b9ac",
+      "path": "LICENSE-MIT",
+      "url": "https://raw.githubusercontent.com/LayerZero-Labs/LayerZero-v2/9c741e7f9790639537b1710a203bcdfd73b0b9ac/LICENSE-MIT",
+      "gitBlobSha": "0029fa9f47e32a77a2475b109327f492a7a9b0d7",
+      "sha256": "1bdefbc20068977ac6458e7142c276acb8d47090cf2dcb0016468ddd8a684244"
+    },
+    {
+      "file": "OpenZeppelin-contracts-4.9.6-LICENSE",
+      "license": "MIT",
+      "repository": "https://github.com/OpenZeppelin/openzeppelin-contracts",
+      "commit": "dc44c9f1a4c3b10af99492eed84f83ed244203f6",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/dc44c9f1a4c3b10af99492eed84f83ed244203f6/LICENSE",
+      "gitBlobSha": "817249a0cd2ec1bb1c3d15ed0166f97903e94557",
+      "sha256": "0e05b4f45c8769ece14ba2d202bf6f5ed7132600b642c981266f7255e0187ea3"
+    }
+  ]
+}

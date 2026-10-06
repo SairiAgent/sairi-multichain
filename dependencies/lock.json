@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "note": "Pinned third-party Solidity sources vendored verbatim from npm registry tarballs. Per-file SPDX licenses are preserved; see THIRD_PARTY_NOTICES.md.",
+  "packages": [
+    {
+      "name": "@layerzerolabs/oft-evm",
+      "version": "4.0.1",
+      "license": "MIT",
+      "tarball": "https://registry.npmjs.org/@layerzerolabs/oft-evm/-/oft-evm-4.0.1.tgz",
+      "integrity": "sha512-GjjfnUbx77TnFFKALVRXJYb1bt1jvarcyyx/AQo6sZfJng5DIqzI9wDxEGlUz03tEnsS6ZOOLBsH+e/hYsruiA==",
+      "licenseTexts": [
+        "LayerZero-v2-LICENSE-MIT"
+      ]
+    },
+    {
+      "name": "@layerzerolabs/oapp-evm",
+      "version": "0.4.1",
+      "license": "MIT",
+      "tarball": "https://registry.npmjs.org/@layerzerolabs/oapp-evm/-/oapp-evm-0.4.1.tgz",
+      "integrity": "sha512-eOoDepVSrUlVNIlnkH0Vd5Vt4lXBkSBh6Bb16vsLbaN9AryBjy4GDpsE7K4c8iWTFL9BiBXGsV7nJTkgqi+xRQ==",
+      "licenseTexts": [
+        "LayerZero-v2-LICENSE-MIT"
+      ]
+    },
+    {
+      "name": "@layerzerolabs/lz-evm-protocol-v2",
+      "version": "3.0.168",
+      "license": "LZBL-1.2",
+      "tarball": "https://registry.npmjs.org/@layerzerolabs/lz-evm-protocol-v2/-/lz-evm-protocol-v2-3.0.168.tgz",
+      "integrity": "sha512-1m9uZDcROJrFjjFZ06J6kmXIqFoJ4r2VH95bL5wsKjkmffNrRYyxbTr2pael7EP8dcq55HpCKc9dg4G1SfTOVQ==",
+      "licenseTexts": [
+        "LayerZero-v2-LICENSE-LZBL-1.2",
+        "LayerZero-v2-LICENSE-MIT"
+      ]
+    },
+    {
+      "name": "@layerzerolabs/lz-evm-messagelib-v2",
+      "version": "3.0.168",
+      "license": "LZBL-1.2",
+      "tarball": "https://registry.npmjs.org/@layerzerolabs/lz-evm-messagelib-v2/-/lz-evm-messagelib-v2-3.0.168.tgz",
+      "integrity": "sha512-tNrpfDu9nhB+/onG3Qzby0PFqi21HpW9dI9oa4HulW5/VfiMQllj2gKOX+BEemokdq2JQhAHvj8dTkp0euXPPg==",
+      "licenseTexts": [
+        "LayerZero-v2-LICENSE-LZBL-1.2",
+        "LayerZero-v2-LICENSE-MIT"
+      ]
+    },
+    {
+      "name": "@openzeppelin/contracts",
+      "version": "4.9.6",
+      "license": "MIT",
+      "tarball": "https://registry.npmjs.org/@openzeppelin/contracts/-/contracts-4.9.6.tgz",
+      "integrity": "sha512-xSmezSupL+y9VkHZJGDoCBpmnB2ogM13ccaYDWqJTfS3dbuHkgjuwDFUmaFauBCboQMGB/S5UqUl2y54X99BmA==",
+      "licenseTexts": [
+        "OpenZeppelin-contracts-4.9.6-LICENSE"
+      ]
+    },
+    {
+      "name": "solidity-bytes-utils",
+      "version": "0.8.4",
+      "license": "MIT",
+      "tarball": "https://registry.npmjs.org/solidity-bytes-utils/-/solidity-bytes-utils-0.8.4.tgz",
+      "integrity": "sha512-/bjac5YR12i0plOKvGlhE51F5IWGP6rI8DJetCQlXcnwKWz/Hgf/vr+Qlk1BWz56xVcwVhmhCaDkTMnx5xvt0g=="
+    }
+  ],
+  "entrypoints": [
+    "@layerzerolabs/oft-evm/contracts/OFTAdapter.sol",
+    "@layerzerolabs/oft-evm/contracts/OFT.sol",
+    "@layerzerolabs/oapp-evm/contracts/oapp/libs/OptionsBuilder.sol",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/EndpointV2.sol",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/uln302/SendUln302.sol",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/uln302/ReceiveUln302.sol"
+  ],
+  "files": {
+    "@layerzerolabs/lz-evm-messagelib-v2/LayerZero-v2-LICENSE-LZBL-1.2": "3d4db8501bee378a0da0b8ee497b1857677f267f0db45f2d9db63f2fcd7a78d9",
+    "@layerzerolabs/lz-evm-messagelib-v2/LayerZero-v2-LICENSE-MIT": "1bdefbc20068977ac6458e7142c276acb8d47090cf2dcb0016468ddd8a684244",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/MessageLibBase.sol": "f84d5ebb48cf47096ba21d535bec480a0e0026fd117d2f851ce22f16b6def0e1",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/ReceiveLibBaseE2.sol": "462a6f82caea234860e4c3583f990fff42612aa3baafcf55350e5c491a5b5a1c",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/SendLibBase.sol": "f29db29ed6a893b411953627a159995e369741a8183f3a35d7dccd6b64e53712",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/SendLibBaseE2.sol": "8dccb0431d729fe8b7c0ad93a3eef00a5b5284aed878a058d2a1caa0bfaf2a5d",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/interfaces/ILayerZeroExecutor.sol": "bac8b14101cd4ee59c12ff796b5f953f46dd8121d12c7294b40bbcaa90020f5b",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/interfaces/ILayerZeroTreasury.sol": "7a4e77c918b9f5eea9d27bbfc65730c22d1fedff3c9efae970e923766b4e632a",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/libs/ExecutorOptions.sol": "51a865ee90596427f27ab9421a8606130d7fdee8d1d9e4fe98d18eea5edaac45",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/libs/SafeCall.sol": "e2d7059fc605a0eea6a6e3cb9e319c4becd85b6bb1ecbb6044d9f62dc5275ae7",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/ReceiveUlnBase.sol": "4bc3784995bed964996d158bb5aa5b8052a2899b9899733d99b468613f553e58",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/SendUlnBase.sol": "e61aaea2dcadc5ce4cbed716cae407d916803fa7d506f2cf23a9df12e856c637",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/UlnBase.sol": "a7d95c8a810ecc06dafd9ed7b26f62898333a10ce8e89e3bd596a53d954be8b6",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/interfaces/ILayerZeroDVN.sol": "73f5be682a219d886ae240a4efd276d9c8c078b309d3e3c5b51d7998252ffc59",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/interfaces/IReceiveUlnE2.sol": "0e2f080b25ec8ea14438abb9a7e99efb5a96ed6feb8976407e00fc756195f234",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/libs/DVNOptions.sol": "b34711a3494285b50b140c55241bb04bf60237dd585bd8c3083062d4c7375e46",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/libs/UlnOptions.sol": "1234b9f1a502cba1ea8ba43576cf377bf1dacb67bf27d37b53c25e58789a4d55",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/uln302/ReceiveUln302.sol": "71f8b9285db7aec38987175fb34cb591e00bfae4423956bd4cdb769daf8f0caa",
+    "@layerzerolabs/lz-evm-messagelib-v2/contracts/uln/uln302/SendUln302.sol": "bd198eb3dae4c7200c49076b22849d0e8de5630c0cad34229277185700ac28f9",
+    "@layerzerolabs/lz-evm-messagelib-v2/package.json": "286185736c4fe45890e08b4ffcf12456900b5ea899b6c5d3a7c1b1c683e116d6",
+    "@layerzerolabs/lz-evm-protocol-v2/LayerZero-v2-LICENSE-LZBL-1.2": "3d4db8501bee378a0da0b8ee497b1857677f267f0db45f2d9db63f2fcd7a78d9",
+    "@layerzerolabs/lz-evm-protocol-v2/LayerZero-v2-LICENSE-MIT": "1bdefbc20068977ac6458e7142c276acb8d47090cf2dcb0016468ddd8a684244",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/EndpointV2.sol": "9702083ea7e0873510bd562095a6028dab5fad5e9be30e452908e6178bd51b6c",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/MessageLibManager.sol": "aa074a24bd2f7b5e91f7b5cb60d647ae3c8d2ff44c3bf62e925d6ce661cf799b",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/MessagingChannel.sol": "6fe3684e208e92cee9f3694ebef144cee3f6ee010a476cc06e1c64532c80dab2",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/MessagingComposer.sol": "2f6c47938a167e98c981e6a7a901b8063157a36a3fb1423ffb3e11a78122a5d7",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/MessagingContext.sol": "71d41a22d8b168b5741b60dac123c203c79f2baec193df683781232d45b1d5b6",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/ILayerZeroComposer.sol": "0d3854122e0ce6f0afa948a073fadd139852601d20d6969913ffbe5efff4533c",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/ILayerZeroEndpointV2.sol": "a88fb702b371527c3791d7e5c168c1157d39021ed29b51e627e02973e6a740e0",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/ILayerZeroReceiver.sol": "24e4add7dd95a72dad23e26c4fadfc1b6ce63148e0c7f4d6ad5dfaeda79db3e7",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/IMessageLib.sol": "7a5733cf68663e1a924c5237adfdad5522a063e2214a81a7ca932242dc45481b",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/IMessageLibManager.sol": "ffc33e319ab5e9d1392d16f8716625bcfb1dc34b744551f87dad1c0eb3ad11f1",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/IMessagingChannel.sol": "9d0100f7cede83d5a4f6c9e03d6bfd24f861e9331b298ca4c73f99b161c718d5",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/IMessagingComposer.sol": "5e7e5a47a477dcf05c034d5135bf6516119af881ea78d586805eee0ad5ab6b12",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/IMessagingContext.sol": "b7f081828b8d0d206833953ebd73101bb28ac62541e7e8365fddc38eb440a92a",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/ISendLib.sol": "816acb88e015f130be9811b4e8efda8d829830ead2f009eb5a9444137af301b5",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/libs/AddressCast.sol": "e48211bfba874d0ce5c3b1fc4e4aac67450ac9539a75e814807745181d04e7dd",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/libs/CalldataBytesLib.sol": "82e74f2c2f10e53a90244af7ac3fabdf121ee9d38b30b40d40c23c08ee3e7ef5",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/libs/Errors.sol": "878ad94dd883caa35f6ef6f29ab9e00b0cd3c941f617f24fe7208a6f50983241",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/libs/GUID.sol": "f462f5b95fba0918ab3bf779b09326eedde0eda85092d99bb32c60cf60bb338b",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/libs/Transfer.sol": "297edd107f543e14dd7deace1d21c008e5c00d1f46fe5e5eb70db3f242c18322",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/messagelib/BlockedMessageLib.sol": "08ff1a98175bcd1657c9957c5b1d74f9e49f5165742795c9a256a3a0841372ee",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/messagelib/libs/BitMaps.sol": "f638b8113c3e046a35e22f5b32ae577efd42221161f09777759dd061c7a735d2",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/messagelib/libs/ExecutorOptions.sol": "e25832f9e533b82212da112600ed936cf810e7662db4c54ceb3577a31ca218fd",
+    "@layerzerolabs/lz-evm-protocol-v2/contracts/messagelib/libs/PacketV1Codec.sol": "ed105f6e0e1ac7ef92b582e30d0d55d260cdcd6ca63057cd866f4c019c069b44",
+    "@layerzerolabs/lz-evm-protocol-v2/package.json": "a5bc9c0dace58ed5fca40c27fb96d27fd1306af8b0bd23f67c03b71d8ddc39ac",
+    "@layerzerolabs/oapp-evm/LayerZero-v2-LICENSE-MIT": "1bdefbc20068977ac6458e7142c276acb8d47090cf2dcb0016468ddd8a684244",
+    "@layerzerolabs/oapp-evm/contracts/oapp/OApp.sol": "92b191c937374b6e76686245b7b98eb3bc0bfacff4d54b279b7ecf1321878e04",
+    "@layerzerolabs/oapp-evm/contracts/oapp/OAppCore.sol": "b0a3e30618f5d4c71732a2048d7c2928be399508d6ec622c9345915c92b3dd0a",
+    "@layerzerolabs/oapp-evm/contracts/oapp/OAppReceiver.sol": "8d1dd4a6a74c3d9704a078e6404dcf7aab688b750ea64e8331f873e253862bc0",
+    "@layerzerolabs/oapp-evm/contracts/oapp/OAppSender.sol": "276f5d551ae7e478fb0c56002acf5476e628748c1f5ba0d63ea051e93813a137",
+    "@layerzerolabs/oapp-evm/contracts/oapp/interfaces/IOAppCore.sol": "041dd35f0a4a22425614414c05cd5aae6ce7e4b5b86b0350045e57c0ed3cbf1b",
+    "@layerzerolabs/oapp-evm/contracts/oapp/interfaces/IOAppMsgInspector.sol": "5bb1fd1038c648bff4e9c7b88f322c5cde41d355f03090ad1ec46f6712f09c4e",
+    "@layerzerolabs/oapp-evm/contracts/oapp/interfaces/IOAppOptionsType3.sol": "c14d4f013045452583eae3baf14743e0628e24c146c3beea5a10b992b1171756",
+    "@layerzerolabs/oapp-evm/contracts/oapp/interfaces/IOAppReceiver.sol": "da4aff9322961c648e2221f7df203a44b375a397f2548b74679b3e9d0ae9addd",
+    "@layerzerolabs/oapp-evm/contracts/oapp/libs/OAppOptionsType3.sol": "7414ab6a173705ac741772684d2bda00a0ed044c5e9faa3339a2dfe10ec867f3",
+    "@layerzerolabs/oapp-evm/contracts/oapp/libs/OptionsBuilder.sol": "34699bf11b40b6ae8a818375ccfa758b7e03df986bc8d52d29882e57144ace17",
+    "@layerzerolabs/oapp-evm/contracts/precrime/OAppPreCrimeSimulator.sol": "b0fcd1e2da22197e21ff13a350ac9d0a7f7e5e8bb1528c5d9860a3b820f555f9",
+    "@layerzerolabs/oapp-evm/contracts/precrime/interfaces/IOAppPreCrimeSimulator.sol": "2db19c9641e81e5366c268c40506db56ee5434b5c874cffe02fb1e18034a9285",
+    "@layerzerolabs/oapp-evm/contracts/precrime/interfaces/IPreCrime.sol": "25a8f3b9257ed4f65fca276f7631cca3ead87c2f17c837e6eee90c8835433380",
+    "@layerzerolabs/oapp-evm/contracts/precrime/libs/Packet.sol": "b95b1e7f7470306f41da606d0984b9384d2134fc19ee814d7d9f98c613836745",
+    "@layerzerolabs/oapp-evm/package.json": "9d8e7dd845eacbac4efa999c96b27ccfe39db989673f8ac13d011e283a7ea0bb",
+    "@layerzerolabs/oft-evm/LayerZero-v2-LICENSE-MIT": "1bdefbc20068977ac6458e7142c276acb8d47090cf2dcb0016468ddd8a684244",
+    "@layerzerolabs/oft-evm/contracts/OFT.sol": "6f7e6b7d514cd2be4e6e5fa0827706289882a62c496786c9c08d5560e1c52415",
+    "@layerzerolabs/oft-evm/contracts/OFTAdapter.sol": "eb379c3d62dc2bde9c8f736d1c886c9c8ec0551cdf28b32e0e55bd84c531555d",
+    "@layerzerolabs/oft-evm/contracts/OFTCore.sol": "5279e6c361b133d057aed94e17f538567cf3d3bc36ca252779b3e013d339e8f1",
+    "@layerzerolabs/oft-evm/contracts/interfaces/IOFT.sol": "560266d2a54174fdb45cfc792e1fd8f6d215b39d8046df08b11c554c8ee292c2",
+    "@layerzerolabs/oft-evm/contracts/libs/OFTComposeMsgCodec.sol": "c1fe5b84aa7fdc9b5480174db9d46baa241edc7a1cc63a93a827e16b7dc21fc8",
+    "@layerzerolabs/oft-evm/contracts/libs/OFTMsgCodec.sol": "3e6dfff6595f8af1c1618a80e30efd16f117652e1fd73ffb1f6795dcc443d658",
+    "@layerzerolabs/oft-evm/package.json": "734a29c07fb56fc6a693755453efa8133b153eadd432d114970572586d0ae05a",
+    "@openzeppelin/contracts/OpenZeppelin-contracts-4.9.6-LICENSE": "0e05b4f45c8769ece14ba2d202bf6f5ed7132600b642c981266f7255e0187ea3",
+    "@openzeppelin/contracts/access/Ownable.sol": "a8e4e1ae19d9bd3e8b0a6d46577eec098c01fbaffd3ec1252fd20d799e73393b",
+    "@openzeppelin/contracts/package.json": "66908abed858584d0057b463d5e825628f45966773007e6130a015417227791e",
+    "@openzeppelin/contracts/token/ERC20/ERC20.sol": "d20d52b4be98738b8aa52b5bb0f88943f62128969b33d654fbca731539a7fe0a",
+    "@openzeppelin/contracts/token/ERC20/IERC20.sol": "7ebde70853ccafcf1876900dad458f46eb9444d591d39bfc58e952e2582f5587",
+    "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": "af5c8a77965cc82c33b7ff844deb9826166689e55dc037a7f2f790d057811990",
+    "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol": "bbf4d26d660ce8f9c9887af3a46bf4eab5f4c15eb8413ad89b65ecdd05dee7a9",
+    "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": "82dc918d8df553e2461b96595580e565424b407d73dab8a7ce4bde479810fb2a",
+    "@openzeppelin/contracts/utils/Address.sol": "8b85a2463eda119c2f42c34fa3d942b61aee65df381f48ed436fe8edb3a7d602",
+    "@openzeppelin/contracts/utils/Context.sol": "b2cfee351bcafd0f8f27c72d76c054df9b571b62cfac4781ed12c86354e2a56c",
+    "@openzeppelin/contracts/utils/introspection/ERC165.sol": "8806a632d7b656cadb8133ff8f2acae4405b3a64d8709d93b0fa6a216a8a6154",
+    "@openzeppelin/contracts/utils/introspection/IERC165.sol": "701e025d13ec6be09ae892eb029cd83b3064325801d73654847a5fb11c58b1e5",
+    "@openzeppelin/contracts/utils/math/SafeCast.sol": "a5dab332e2caa1db5aae709693e59431132aa720528d0245a647dde6e93d7436",
+    "solidity-bytes-utils/LICENSE": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+    "solidity-bytes-utils/contracts/BytesLib.sol": "99e631c460da5d1e5741967fcae56758cea911ac384cfd71c6d829a893369840",
+    "solidity-bytes-utils/package.json": "7cffbcb548c5b59cd3c32b14d7b4d0a52f7719799acf775b194f6c4ebbac8751"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "kind": "TESTNET_DEPLOYMENT_RECORD",
+  "note": "Filled in by the maintainer ONLY after a real testnet deployment, from broadcast receipts. null = not deployed. Never put production or mainnet addresses here.",
+  "operator": null,
+  "baseSepolia": {
+    "token": null,
+    "adapter": null
+  },
+  "robinhoodTestnet": {
+    "backed": null
+  }
+}

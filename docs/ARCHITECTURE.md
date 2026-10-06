@@ -35,6 +35,26 @@ The safety observation is **L = actual observed canonical backing held**, normal
 
 Typed configuration validation, integer pool simulation, and snapshot evaluation are offline tools. Unknown live addresses remain null. Documentary candidates are isolated in `config/research/`; they are never silently promoted to deployment parameters. A common epoch label alone is not cryptographic proof that two finalized chain observations are comparable. No persistent monitor, claim scheduler, transaction signer or public-chain deployment tool is installed.
 
+## LayerZero OFT topology (testnet-only implementation)
+
+The same canonical-lockbox / backed-representation architecture, built on the official LayerZero OFT contracts:
+
+```mermaid
+flowchart LR
+  T[tSAIRI-TEST stand-in, Base Sepolia] -->|approve + send: exact pull, totalLocked += x| A[SairiOFTAdapter]
+  A -->|EndpointV2 + SendUln302 PacketSent| D1[LayerZero Labs DVN + executor]
+  D1 -->|ReceiveUln302 verify/commit, EndpointV2.lzReceive| B[SairiBackedOFT, Robinhood testnet: mint]
+  B -->|send: burn| D2[LayerZero Labs DVN + executor]
+  D2 -->|lzReceive: release <= totalLocked, exact push| A
+```
+
+- `SairiOFTAdapter` extends `OFTAdapter`; `SairiBackedOFT` extends `OFT`; both mix in `SairiOFTGuards` (one remote EID, once-only peer, pause, outbound rate limit, exposure cap, dust/compose/recipient checks). Neither has a mint or withdraw entry point beyond LayerZero delivery.
+- Messages use the standard OFT v1 encoding (recipient bytes32, amount in 6 shared decimals). Shared-decimal dust is rejected rather than left with the sender.
+- The wiring script pins send/receive libraries, the LayerZero Labs DVN, confirmations and executor per OApp, so default changes by LayerZero do not silently change the route. The script's `send()` re-checks the effective per-app route and exact enforced options before broadcasting.
+- Cross-chain observation tooling reports raw, unsynchronized values with backing status `UNKNOWN`; in-flight liabilities are never inferred from balances.
+- Owner = endpoint delegate = the testnet operator. The delegate can still change libraries/DVNs at the endpoint; this is the main residual trust (see THREAT_MODEL).
+- Local tests run genuine EndpointV2/ULN302 code for both chains in one EVM with test DVN/executor workers; the opt-in fork test runs the real scripts against the live testnet LayerZero deployments with an impersonated DVN.
+
 ## Production direction, not an implemented integration
 
 Conditional candidate: a single canonical Base OFTAdapter plus backed Robinhood OFT representation. Existing adapters and mint domains must be checked before proposing a new lockbox. CCIP remains an availability-dependent alternative. See [ADR 0001](adr/0001-interoperability.md), [sources](SOURCES.md) and the integration backlog. Actual canonical identity, beneficiary, endpoint/library/DVN configuration, bytecode, DEX integration, license compatibility and audits remain production gates.

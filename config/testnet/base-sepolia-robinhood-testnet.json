@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "environment": "testnet",
+  "kind": "TESTNET_ROUTE_EXPECTATIONS_NOT_PRODUCTION_CONFIG",
+  "note": "Values from LayerZero metadata (retrieved 2026-10-06) cross-checked by read-only RPC. Testnet only; mainnet chain IDs are rejected by the tooling. Must mirror script/testnet/TestnetRoutes.sol.",
+  "sources": {
+    "layerzeroMetadata": "https://metadata.layerzero-api.com/v1/metadata",
+    "layerzeroScanApi": "https://scan-testnet.layerzero-api.com/v1",
+    "uniswapV4Deployments": "https://developers.uniswap.org/docs/protocols/v4/deployments"
+  },
+  "oftMessageBytes": 40,
+  "lzReceiveGas": 120000,
+  "chains": {
+    "baseSepolia": {
+      "chainKey": "base-sepolia",
+      "chainId": 84532,
+      "rpc": "https://sepolia.base.org",
+      "eid": 40245,
+      "remote": "robinhoodTestnet",
+      "endpoint": "0x6edce65403992e310a62460808c4b910d972f10f",
+      "sendUln302": "0xc1868e054425d378095a003ecba3823a5d0135c9",
+      "receiveUln302": "0x12523de19dc41c91f7d2093e0cfbb76b17012c8d",
+      "executor": "0x8a3d588d9f6ac041476b094f97ff94ec30169d3d",
+      "dvnLayerZeroLabs": "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6",
+      "deadDvn": "0x78551adc2553ef1858a558f5300f7018aad2fa7e",
+      "sendConfirmations": 2,
+      "receiveConfirmations": 1,
+      "maxMessageSize": 10000,
+      "uniswapV4": {
+        "documented": true,
+        "poolManager": "0x05e73354cfdd6745c338b50bcfdfa3aa6fa03408"
+      }
+    },
+    "robinhoodTestnet": {
+      "chainKey": "robinhood-testnet",
+      "chainId": 46630,
+      "rpc": "https://rpc.testnet.chain.robinhood.com",
+      "eid": 40451,
+      "remote": "baseSepolia",
+      "endpoint": "0x3acaaf60502791d199a5a5f0b173d78229ebfe32",
+      "sendUln302": "0x45841dd1ca50265da7614fc43a361e526c0e6160",
+      "receiveUln302": "0xd682ecf100f6f4284138aa925348633b0611ae21",
+      "executor": "0x701f3927871efcea1235db722f9e608ae120d243",
+      "dvnLayerZeroLabs": "0xa78a78a13074ed93ad447a26ec57121f29e8fec2",
+      "deadDvn": "0x88b27057a9e00c5f05dda29241027aff63f9e6e0",
+      "sendConfirmations": 1,
+      "receiveConfirmations": 2,
+      "maxMessageSize": 10000,
+      "uniswapV4": {
+        "documented": false,
+        "poolManager": null,
+        "undocumentedCodeObservedAt": "0x8366a39cc670b4001a1121b8f6a443a643e40951"
+      }
+    }
+  }
+}

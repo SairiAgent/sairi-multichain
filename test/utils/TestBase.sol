@@ -3,6 +3,23 @@ pragma solidity 0.8.30;
 
 /// @notice Minimal subset of Foundry cheatcodes used by this repository (no forge-std dependency).
 interface Vm {
+    struct Log {
+        bytes32[] topics;
+        bytes data;
+        address emitter;
+    }
+
+    function recordLogs() external;
+    function getRecordedLogs() external returns (Log[] memory logs);
+    function deal(address account, uint256 newBalance) external;
+    function chainId(uint256 newChainId) external;
+    function setEnv(string calldata name, string calldata value) external;
+    function toString(address value) external pure returns (string memory);
+    function createSelectFork(string calldata urlOrAlias, uint256 blockNumber) external returns (uint256 forkId);
+    function rpc(string calldata urlOrAlias, string calldata method, string calldata params)
+        external
+        returns (bytes memory data);
+    function selectFork(uint256 forkId) external;
     function prank(address sender) external;
     function startPrank(address sender) external;
     function stopPrank() external;

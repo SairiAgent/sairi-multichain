@@ -1,4 +1,8 @@
-"""Command-line entry point. Offline only: reads local JSON files, never a chain, wallet or network."""
+"""Command-line entry point. Offline by default: reads local JSON files, never a wallet or key.
+
+Only the explicitly named `testnet-*` commands touch the network, and only with read-only JSON-RPC calls /
+a LayerZero Scan testnet GET restricted to the Base Sepolia <-> Robinhood testnet allowlist.
+"""
 import argparse
 import datetime
 import json
@@ -6,8 +10,9 @@ import re
 import sys
 import time
 
-from . import config, demo, monitor, simulator
+from . import config, demo, monitor, simulator, testnet
 from .amm import Pool, PoolError, quote_exact_input
+from .rpc import RpcClient
 from .strict import StrictJSONError, load_path, parse_decimal
 
 
@@ -97,6 +102,57 @@ def cmd_demo(_args):
     return 0 if report["ok"] else 1
 
 
+def _testnet_clients(cfg):
+    chains = testnet.validate_config(cfg)
+    return {key: RpcClient(chains[key]["rpc"]) for key in testnet.CHAIN_KEYS}
+
+
+def _load_testnet_config(path):
+    cfg = load_path(path)
+    testnet.validate_config(cfg)
+    return cfg
+
+
+def cmd_testnet_preflight(args):
+    try:
+        cfg = _load_testnet_config(args.config)
+        report = testnet.preflight(cfg, _testnet_clients(cfg))
+    except (OSError, StrictJSONError, ValueError) as err:
+        report = {"kind": "TESTNET_READ_ONLY_PREFLIGHT", "status": testnet.INVALID, "blockers": [str(err)]}
+    if args.out:
+        with open(args.out, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps(report, indent=2) + "\n")
+    _emit(report)
+    return 0 if report["status"] == testnet.READY else 1
+
+
+def cmd_testnet_status(args):
+    try:
+        cfg = _load_testnet_config(args.config)
+        report = testnet.status(cfg, load_path(args.deployments), _testnet_clients(cfg))
+    except (OSError, StrictJSONError, ValueError) as err:
+        report = {"kind": "TESTNET_DEPLOYMENT_STATUS", "status": testnet.INVALID, "blockers": [str(err)],
+                  **testnet.STATUS_EVIDENCE_FLAGS}
+    if args.expect:
+        report["expected"] = args.expect
+        _emit(report)
+        return 0 if report["status"] == args.expect else 1
+    _emit(report)
+    # Fail closed: no status proves backing, so none exits 0 (UNKNOWN 4, BLOCKED 1, INVALID 5, NOT_DEPLOYED 6).
+    return testnet.STATUS_EXIT_CODES[report["status"]]
+
+
+def cmd_testnet_message(args):
+    try:
+        cfg = _load_testnet_config(args.config)
+        report = testnet.fetch_message(cfg, args.tx_hash)
+    except (OSError, StrictJSONError, ValueError) as err:
+        report = {"kind": "LAYERZERO_SCAN_LOOKUP", "status": testnet.INVALID, "error": str(err)}
+    _emit(report)
+    # 0 only means the third-party indexer reports delivery on the pinned route; it is not proof (`proof: false`).
+    return 0 if report["status"] == testnet.INDEXER_DELIVERED else 1
+
+
 def build_parser():
     parser = argparse.ArgumentParser(prog="sairi", description="EXPERIMENTAL offline SAIRI harness tooling")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -133,6 +189,24 @@ def build_parser():
 
     p = sub.add_parser("demo", help="synthetic L/R/P/Q roundtrip with swaps and claims reconciliation")
     p.set_defaults(func=cmd_demo)
+
+    p = sub.add_parser("testnet-preflight", help="NETWORK, read-only: verify the pinned testnet LayerZero route")
+    p.add_argument("config")
+    p.add_argument("--out", help="also write the JSON evidence report to this path")
+    p.set_defaults(func=cmd_testnet_preflight)
+
+    p = sub.add_parser("testnet-status",
+                       help="NETWORK, read-only: structural checks + raw observations (backing status is UNKNOWN)")
+    p.add_argument("config")
+    p.add_argument("deployments")
+    p.add_argument("--expect", choices=sorted(testnet.STATUS_EXIT_CODES),
+                   help="succeed only if this status is produced")
+    p.set_defaults(func=cmd_testnet_status)
+
+    p = sub.add_parser("testnet-message", help="NETWORK, read-only: LayerZero Scan testnet lookup by source tx")
+    p.add_argument("config")
+    p.add_argument("tx_hash")
+    p.set_defaults(func=cmd_testnet_message)
     return parser
 
 
