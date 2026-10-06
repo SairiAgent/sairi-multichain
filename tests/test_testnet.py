@@ -13,7 +13,7 @@ from sairi_tools.strict import load_path
 
 ROOT = _support.ROOT
 CONFIG = ROOT / "config" / "testnet" / "base-sepolia-robinhood-testnet.json"
-DEPLOYMENTS = ROOT / "config" / "testnet" / "deployments.json"
+DEPLOYMENTS = ROOT / "tests" / "fixtures" / "testnet-not-deployed.json"
 NOW = datetime.datetime(2026, 10, 6, tzinfo=datetime.UTC)
 
 
@@ -263,7 +263,7 @@ class StatusTest(unittest.TestCase):
         self.cfg = load_path(CONFIG)
         self.dep = load_path(DEPLOYMENTS)
 
-    def test_repository_record_is_not_deployed(self):
+    def test_empty_fixture_is_not_deployed(self):
         cl, _, _ = clients(self.cfg)
         out = testnet.status(self.cfg, self.dep, cl)
         self.assertEqual(out["status"], "NOT_DEPLOYED")
@@ -398,7 +398,7 @@ class CliTest(unittest.TestCase):
         self.assertEqual(code, 5)
         self.assertEqual(out["status"], testnet.INVALID)
         self.assertFalse(out["inFlightLiabilitiesVerified"])
-        # The committed record is all-null: NOT_DEPLOYED, decided before any network read.
+        # The dedicated fixture is all-null: NOT_DEPLOYED, with no network read.
         code, out = _support.run_cli("testnet-status", CONFIG, DEPLOYMENTS)
         self.assertEqual((code, out["status"]), (6, testnet.NOT_DEPLOYED))
         code, _ = _support.run_cli("testnet-status", CONFIG, DEPLOYMENTS, "--expect", "NOT_DEPLOYED")

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "kind": "TESTNET_DEPLOYMENT_RECORD",
+  "note": "Offline NOT_DEPLOYED test fixture; independent of real deployments.",
+  "operator": null,
+  "baseSepolia": {"token": null, "adapter": null},
+  "robinhoodTestnet": {"backed": null}
+}
